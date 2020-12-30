@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+java{
+	sourceCompatibility =  JavaVersion.valueOf(versionJava)
+    targetCompatibility =  JavaVersion.valueOf(versionJava)
+}
+
+repositories {
+    flatDir {
+		dirs 'libs'
+	}
+	mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation files("$utilsPath")
+	
+	implementation "org.apache.commons:commons-lang3:$commonsLangVersion"
+}
+
+run.enabled = false
